@@ -22,7 +22,7 @@ function Exchanges() {
   const [page, setPage] = useState(1);
   const [totalData, setTotalData] = useState(1);
   const [pageChage,setPageChange] = useState(false);
-  const btns = new Array(Math.floor(totalData / 192)).fill(1);
+  const btns = new Array(Math.ceil(totalData / 192)).fill(1);
 
   function changePageHandler(value) {
     setLoading(true);
