@@ -1,4 +1,4 @@
-import { Button, Container, HStack } from "@chakra-ui/react";
+import { Button, Container, HStack, Radio, RadioGroup } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import CoinCard from "./CoinCard";
 import axios from "axios";
@@ -11,6 +11,9 @@ function Coins() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [page,setPage] = useState(1);
+  const [currency,setCurrency] = useState('inr');
+  const [currencySymbol,setCurrencySymol] = useState('₹');
+
   const btns = new Array(132).fill(1);
 
 
@@ -18,12 +21,17 @@ function Coins() {
     setPage(val);
     setLoading(true);
   }
+  
+  useEffect(()=>{
+    const symbol = currency==='inr'?'₹':currency==='usd'?'$':'€';
+    setCurrencySymol(symbol);
+  },[currency])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${server}/coins/markets?vs_currency=inr&page=${page}`
+          `${server}/coins/markets?vs_currency=${currency}&page=${page}`
         );
         setCoinData(response.data);
         setLoading(false);
@@ -32,7 +40,7 @@ function Coins() {
       }
     };
     fetchData();
-  }, [page]);
+  }, [page,currency]);
 
   if (error === true) {
     return <Error />;
@@ -42,6 +50,11 @@ function Coins() {
     <Loader />
   ) : (
     <Container maxW={"container.xl"}>
+      <RadioGroup value={currency} onChange={setCurrency} display={'flex'} gap={'1rem'}>
+        <Radio value='inr'>INR</Radio>
+        <Radio value='usd'>USD</Radio>
+        <Radio value='eur'>EUR</Radio>
+      </RadioGroup>
       <HStack wrap={"wrap"} p={"1rem "}>
         {coinData.map((data) => (
           <CoinCard
@@ -49,6 +62,7 @@ function Coins() {
             name={data.name}
             key={data.id}
             currentPrice={data.current_price}
+            currenySymbol={currencySymbol}
           />
         ))}
       </HStack>
