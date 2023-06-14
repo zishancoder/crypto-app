@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Coins() {
   return (
@@ -6,4 +6,4 @@ function Coins() {
   )
 }
 
-export default Coins
+export default Coins;

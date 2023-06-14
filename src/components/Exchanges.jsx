@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   Box,
+  Button,
   Container,
   HStack,
   Heading,
@@ -14,30 +15,41 @@ import Error from "./Error";
 import { server } from "../index";
 
 function Exchanges() {
+  
   const [exchangeData, setExchangeData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error,setError] = useState(false);
+  const [error, setError] = useState(false);
+  const [page, setPage] = useState(1);
+  const [totalData, setTotalData] = useState(1);
+  const [pageChage,setPageChange] = useState(false);
+  const btns = new Array(Math.floor(totalData / 192)).fill(1);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        `${server}/exchanges?per_page=192&page=1`
-      );
-      console.log(response);
-      setExchangeData(response.data);
-      setLoading(false);
-    } catch (error) {
-      setExchangeData(false)
-      setError(true);
-    }
-  };
+  function changePageHandler(value) {
+    setLoading(true);
+    setPage(value);
+    setPageChange(true);
+  }
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${server}/exchanges?per_page=192&page=${page}`
+        );
+        console.log(response);
+        setTotalData(Number(response.headers.total));
+        setExchangeData(response.data);
+        setLoading(false);
+        setPageChange(false);
+      } catch (error) {
+        setError(true);
+      }
+    };
     fetchData();
-  }, []);
+  }, [page,pageChage]);
 
-  if(error===true){
-    return <Error/>
+  if (error === true) {
+    return <Error />;
   }
 
   return loading ? (
@@ -54,6 +66,23 @@ function Exchanges() {
             url={item.url}
           />
         ))}
+      </HStack>
+      <HStack p={'1rem'}>
+        {btns.map((item, idx) => {
+          return (
+            <Button
+              onClick={() => {
+                changePageHandler(idx + 1);
+              }}
+              key={idx}
+              bgColor={'blackAlpha.900'}
+              color={'white'}
+              variant={'unstyled'}
+            >
+              {idx + 1}
+            </Button>
+          );
+        })}
       </HStack>
     </Container>
   );
