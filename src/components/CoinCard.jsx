@@ -28,7 +28,7 @@ function CoinCard({ imgSrc, name, currentPrice, currenySymbol='₹' }) {
         <Heading fontSize={"md"} noOfLines={"1"} m={'0.5rem 0'}>
           {name}
         </Heading>
-        <Text>{currenySymbol} {currentPrice}</Text>
+        <Text>{currenySymbol} {currentPrice?currentPrice:"NA"}</Text>
       </Box>
     </Link>
   );
