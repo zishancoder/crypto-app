@@ -20,6 +20,32 @@ This App gives you an inclusive overview of crypto currencies.
 https://zishan-cryptoapp.netlify.app/
 
 
+## Screenshots
+### Screen 1
+![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_1.png)
+### Screen 2
+![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_2.png)
+### Screen 3
+![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_3.png)
+### Screen 4
+![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_4.png)
+
+
+
+## Tech Stack
+
+- React 
+- Chakra UI
+- Packages: react-router-dom , Framer Motion, axios, react-icons, react-chartjs-2, chart.js
+
+
+## Lessons Learned
+
+- To fetch data from api and representation in our website 
+- Use of chakra UI for creation of beautiful UI
+- Learned about React Router DOM
+- Learned about axios and chart.js library
+
 ## API Reference
 
 #### End Point
@@ -52,29 +78,3 @@ https://zishan-cryptoapp.netlify.app/
 ```http
   GET https://api.coingecko.com/api/v3/coins/{id}/market_chart
 ```
-
-
-## Screenshots
-### Screen 1
-![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_1.png)
-### Screen 2
-![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_2.png)
-### Screen 3
-![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_3.png)
-### Screen 4
-![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_4.png)
-
-## Tech Stack
-
-- React 
-- Chakra UI
-- Packages: react-router-dom , Framer Motion, axios, react-icons, react-chartjs-2, chart.js
-
-
-## Lessons Learned
-
-- To fetch data from api and representation in our website 
-- Use of chakra UI for creation of beautiful UI
-- Learned about React Router DOM
-- Learned about axios and chart.js library
-
