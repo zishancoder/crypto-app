@@ -15,6 +15,10 @@ This App gives you an inclusive overview of crypto currencies.
 - Responsive
 
 
+## Demo Link
+
+https://zishan-cryptoapp.netlify.app/
+
 
 ## API Reference
 
@@ -48,14 +52,6 @@ This App gives you an inclusive overview of crypto currencies.
 ```http
   GET https://api.coingecko.com/api/v3/coins/{id}/market_chart
 ```
-
-
-
-
-
-## Demo Link
-
-https://zishan-cryptoapp.netlify.app/
 
 
 ## Screenshots
