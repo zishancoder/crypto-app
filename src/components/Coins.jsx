@@ -55,9 +55,10 @@ function Coins() {
         <Radio value='usd'>USD</Radio>
         <Radio value='eur'>EUR</Radio>
       </RadioGroup>
-      <HStack wrap={"wrap"} p={"1rem "}>
+      <HStack wrap={"wrap"} p={"1rem "} justifyContent={'center'}>
         {coinData.map((data) => (
           <CoinCard
+            id={data.id}
             imgSrc={data.image}
             name={data.name}
             key={data.id}
@@ -69,6 +70,7 @@ function Coins() {
       <HStack overflowX={"auto"}>
         {btns.map((item, idx) => (
           <Button
+            key={idx}
             bgColor={"blackAlpha.900"}
             color={"white"}
             variant={"unstyled"}

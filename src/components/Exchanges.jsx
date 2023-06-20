@@ -56,7 +56,7 @@ function Exchanges() {
     <Loader />
   ) : (
     <Container maxW={"container.xl"}>
-      <HStack wrap={"wrap"}>
+      <HStack wrap={"wrap"} justifyContent={'center'}>
         {exchangeData.map((item) => (
           <ExchangeCard
             key={item.id}

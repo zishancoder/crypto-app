@@ -3,10 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-
-function CoinCard({ imgSrc, name, currentPrice, currenySymbol='₹' }) {
+function CoinCard({ imgSrc, name, currentPrice, currenySymbol='₹',id }) {
   return (
-    <Link to={'/coindetails'}>
+    <Link to={`/coin/${id}`}>
       <Box
         p={"1rem"}
         w={"8rem"}
