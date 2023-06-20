@@ -36,7 +36,6 @@ function Exchanges() {
         const response = await axios.get(
           `${server}/exchanges?per_page=192&page=${page}`
         );
-        console.log(response);
         setTotalData(Number(response.headers.total));
         setExchangeData(response.data);
         setLoading(false);
