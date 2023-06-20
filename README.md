@@ -12,6 +12,7 @@ This App gives you an inclusive overview of crypto currencies.
 - Provided a graph of price fluctuation in 24hrs, 7days, 30days, 180days, 365days.
 - You can also see price fluctuation of coin from the date it was created.
 - You can view prices in INR, USD, EUR
+- Responsive
 
 
 
@@ -54,10 +55,29 @@ This App gives you an inclusive overview of crypto currencies.
 
 ## Demo Link
 
-Insert gif or link to demo
+https://zishan-cryptoapp.netlify.app/
 
 
 ## Screenshots
 
 ![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_1.png)
+
+![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_2.png)
+
+![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_3.png)
+
+![App Screenshot](https://github.com/zishancoder/crypto-app/blob/main/src/screenshots/screenshot_4.png)
+## Tech Stack
+
+- React 
+- Chakra UI
+- Packages: react-router-dom , Framer Motion, axios, react-icons, react-chartjs-2, chart.js
+
+
+## Lessons Learned
+
+- To fetch data from api and representation in our website 
+- Use of chakra UI for creation of beautiful UI
+- Learned about React Router DOM
+- Learned about axios and chart.js library
 
