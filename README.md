@@ -43,6 +43,7 @@ https://zishan-cryptoapp.netlify.app/
 
 - To fetch data from api and representation in our website 
 - Use of chakra UI for creation of beautiful UI
+- Learned how to make loader for website
 - Learned about React Router DOM
 - Learned about axios and chart.js library
 
