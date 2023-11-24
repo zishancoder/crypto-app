@@ -15,10 +15,10 @@ function Footer() {
         <Text color={"white"} fontSize={'lg'}>About</Text>
         <Text color={"whiteAlpha.800"}>This website provide insight about crypto currencies.</Text>
       </VStack>
-      <VStack>
+      {/* <VStack>
         <Avatar size={'lg'} src={'https://lh3.googleusercontent.com/a/AAcHTtfsDzOaWVGV_jvqQPQv4BSuFVAuj26kz7kV7EFAFg=s360-c-no'}></Avatar>
         <Text color={"white"} textAlign={'center'}>Made by Zishan<br/>With ❤️</Text>
-      </VStack>
+      </VStack> */}
     </Box>
   );
 }
